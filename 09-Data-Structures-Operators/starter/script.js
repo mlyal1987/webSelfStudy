@@ -65,12 +65,143 @@ const restaurant = {
 
 ///////////////////////////////////////
 
+// const airline = 'TAP Air Portugal';
+
+// console.log(airline.toLowerCase());
+// console.log(airline.toUpperCase());
+
+// //fix capitalization
+// const passenger = 'vIctor';
+// const nameLower = passenger.toLowerCase();
+// const correctName = nameLower[0].toUpperCase() + nameLower.slice(1);
+// console.log(correctName);
+
+// const nameFixer = function (name) {
+//   const n = name.toLowerCase();
+//   const nn = n[0].toUpperCase() + n.slice(1);
+//   console.log(nn);
+// };
+// nameFixer('eLiana');
+// nameFixer('esteBAN');
+
+// //comparing emails
+// const email = 'hello@victor.io';
+// const loginEmail = '  hello@Victor.Io \n';
+// const lowerEmail = loginEmail.toLowerCase().trim();
+
+// email === loginEmail
+//   ? console.log('addresses are the same')
+//   : console.log('addresses are not the same');
+
+// //replacing
+// const priceGB = '288,97£';
+// const priceUS = priceGB.replace('£', '$').replace(',', '.');
+// console.log(priceUS);
+// const announcement =
+//   'All passengers come to boarding door 23. Boarding door 23!';
+// const newAnnouncement = announcement.replaceAll('door', 'gate');
+// console.log(newAnnouncement);
+
+// //Booleans
+// const plane = 'Airbus A320neo';
+// console.log(plane.includes('0neo'));
+// console.log(plane.includes('Boeing'));
+// console.log(plane.startsWith('Air'));
+// console.log(plane.endsWith('neo'));
+// console.log(plane.includes('0n'));
+// if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+//   console.log('Part of the NEW Airbus family');
+// }
+
+// const checkBaggage = function (items) {
+//   const baggage = items.toLowerCase();
+//   if (baggage.includes('knife', 'guns', 'gun', 'knives')) {
+//     console.log('Your baggage is not allowed in the plane');
+//   } else {
+//     console.log('Your baggage IS allowed in the plae');
+//   }
+// };
+// checkBaggage('I have a laptop, some food and a pocket knife');
+// checkBaggage('I have a laptop, some food and snacks');
+
+// console.log(typeof plane[0]);
+// console.log(plane[1]);
+// console.log(plane[2]);
+// console.log('B737'[0]);
+// console.log(airline.length);
+// console.log('B737'.length);
+// console.log(airline.indexOf('r'));
+// console.log(airline.lastIndexOf('r'));
+// console.log(airline.indexOf('Portugal'));
+// console.log(airline.slice(4));
+// console.log(typeof airline.slice(4));
+// console.log(airline.slice(4, 7));
+// console.log(airline.slice(0, airline.indexOf(' ')));
+// console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+// console.log(airline.slice(-2));
+// console.log(airline.slice(1, -1));
+// const checkMiddelSeat = function (seat) {
+//   //B and E are middle seats
+//   const s = seat.slice(-1);
+//   s === 'B' || s === 'E'
+//     ? console.log('You have a middle seat')
+//     : console.log('You do not have a middle seat');
+// };
+// checkMiddelSeat('11B');
+// checkMiddelSeat('23C');
+// checkMiddelSeat('50E');
+// checkMiddelSeat('09A');
+
 //WORKING WITH STRINGS PT.3 ------------------------------------------------------------
 
 //Split - allows to split a String into multiple parts
-//we get an array
-console.log('a+very+nice+evening'.split('+'));
-console.log('Victor Lucero'.split(' '));
+// console.log('a+very+nice+String'.split('+'));
+// console.log('Victor Lucero'.split(' '));
+// const [firstName, lastName] = 'Victor Lucero'.split(' ');
+// console.log(firstName, lastName);
+// const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+// console.log(newName);
+
+// const capitalizeName = function (name) {
+//   const names = name.split(' ');
+//   const namesUpper = [];
+//   for (const n of names) {
+//     // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+//     namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+//   }
+//   console.log(namesUpper.join(' '));
+// };
+// capitalizeName('jessica ann smith davis');
+// capitalizeName('victor lucero');
+
+// //padding a string
+// //adding characters
+// const message = 'Go to gate 23!';
+// //we type first the amount of characters that we need, then the character to fill it up with.
+// //we can also add characters to the end.
+// console.log(message.padStart(25, '+').padEnd(35, '+'));
+// console.log('Victor'.padStart(25, '+').padEnd(35, '+'));
+
+// const maskCreditCard = function (number) {
+//   const str = number + '';
+//   const last = str.slice(-4);
+//   return last.padStart(str.length, '*');
+// };
+// console.log(maskCreditCard('7665 6776 2887 6793'));
+// console.log(maskCreditCard('3433678567769673'));
+
+// //repeat
+// //allows to repeat a string multiple times
+// const message2 = 'Bad weather... All departures delayed... ';
+// console.log(message2.repeat(5));
+
+// const planesInLine = function (n) {
+//   console.log(`The are ${n} planes in line ${'🛩️'.repeat(n)}`);
+// };
+// planesInLine(1);
+// planesInLine(2);
+// planesInLine(3);
+// planesInLine(4);
 
 //WORKING WITH STRINGS PT.2 ------------------------------------------------------------
 
@@ -173,7 +304,7 @@ console.log('Victor Lucero'.split(' '));
 // //the slice method will "slice" from the typed index. We get a substring (part of a String)
 // console.log(airline.slice(4));
 
-// //extracting - we can also type and end character
+// //extracting - we can also type and end character. It will stop before the specified index
 // console.log(airline.slice(4, 7));
 
 // //Extracting the first word
@@ -1033,3 +1164,76 @@ GOOD LUCK 😀
 // console.log('-------------');
 // console.log('Objeto entero');
 // console.log(entradas);
+
+////////////////////////////////////////////////////////////////
+
+// Coding Challenge #4
+
+/*
+Write a program that receives a list of variable names written in underscore_case and convert them to camelCase.
+
+The input will come from a textarea inserted into the DOM (see code below), and conversion will happen when the button is pressed.
+
+THIS TEST DATA (pasted to textarea)
+underscore_case
+ first_name
+Some_Variable 
+  calculate_AGE
+delayed_departure
+
+SHOULD PRODUCE THIS OUTPUT (5 separate console.log outputs)
+underscoreCase      ✅
+firstName           ✅✅
+someVariable        ✅✅✅
+calculateAge        ✅✅✅✅
+delayedDeparture    ✅✅✅✅✅
+
+HINT 1: Remember which character defines a new line in the textarea 😉
+HINT 2: The solution only needs to work for a variable made out of 2 words, like a_b
+HINT 3: Start without worrying about the ✅. Tackle that only after you have the variable name conversion working 😉
+HINT 4: This challenge is difficult on purpose, so start watching the solution in case you're stuck. Then pause and continue!
+
+Afterwards, test with your own test data!
+
+GOOD LUCK 😀
+*/
+
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+document
+  .querySelector('button')
+  .addEventListener('click', function (variables) {
+    const wordArr = [];
+    const textoArea = document.querySelector('textarea').value.toLowerCase();
+    const textoSingleLine = textoArea.split('\n');
+    for (const row of textoSingleLine) {
+      const [first, second] = row.toLowerCase().trim().split('_');
+      const output = `${first}${second.replace(
+        second[0],
+        second[0].toUpperCase()
+      )}`;
+      console.log(output);
+    }
+  });
+
+// const getText = function (variables) {
+//   variables = texto;
+//   console.log(variables);
+// };
+
+// document.querySelector('button').addEventListener('click', getText());
+
+// const program = function (variables) {
+//   const wordArr = [];
+//   const word = variables + '';
+//   const wordFixed = word.toLowerCase().trim().split('_');
+//   const [word1, word2] = wordFixed;
+//   const varFinal = word1 + word2[0].toUpperCase() + word2.slice(1);
+
+//   console.log(varFinal);
+// };
+
+// program('underscore_case');
+// program(' first_name');
+// program('  calculate_AGE');
