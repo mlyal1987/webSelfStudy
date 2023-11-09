@@ -1204,10 +1204,9 @@ document.body.append(document.createElement('button'));
 document
   .querySelector('button')
   .addEventListener('click', function (variables) {
-    const wordArr = [];
-    const textoArea = document.querySelector('textarea').value.toLowerCase();
-    const textoSingleLine = textoArea.split('\n');
-    for (const row of textoSingleLine) {
+    const text = document.querySelector('textarea').value;
+    const rows = text.split('\n');
+    for (const row of rows) {
       const [first, second] = row.toLowerCase().trim().split('_');
       const output = `${first}${second.replace(
         second[0],
@@ -1216,24 +1215,3 @@ document
       console.log(output);
     }
   });
-
-// const getText = function (variables) {
-//   variables = texto;
-//   console.log(variables);
-// };
-
-// document.querySelector('button').addEventListener('click', getText());
-
-// const program = function (variables) {
-//   const wordArr = [];
-//   const word = variables + '';
-//   const wordFixed = word.toLowerCase().trim().split('_');
-//   const [word1, word2] = wordFixed;
-//   const varFinal = word1 + word2[0].toUpperCase() + word2.slice(1);
-
-//   console.log(varFinal);
-// };
-
-// program('underscore_case');
-// program(' first_name');
-// program('  calculate_AGE');
