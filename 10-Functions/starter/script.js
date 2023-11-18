@@ -24,25 +24,29 @@
 //////////////////////////////////////
 //How passing arguments work value vs reference
 
-const flight = 'LH234';
-const victor = { name: 'Victor Lucero', passport: 2343345487 };
+// const flight = 'LH234';
+// const victor = { name: 'Victor Lucero', passport: 2343345487 };
 
-const checkIn = function (flightNum, passenger) {
-  flightNum = 'LH999';
-  passenger.name = 'Mr. ' + passenger.name;
-  if (passenger.passport === 2343345487) {
-    alert('Checked in');
-  } else {
-    alert('Wrong passport');
-  }
-};
-checkIn(flight, victor);
-console.log(flight);
-console.log(victor);
+// const checkIn = function (flightNum, passenger) {
+//   flightNum = 'LH999';
+//   passenger.name = 'Mr. ' + passenger.name;
+//   if (passenger.passport === 2343345487) {
+//     alert('Checked in');
+//   } else {
+//     alert('Wrong passport');
+//   }
+// };
+// checkIn(flight, victor);
+// console.log(flight);
+// console.log(victor);
 
-const newPassPort = function (person) {
-  person.passport = Math.trunc(Math.random() * 10000000000);
-};
+// const newPassPort = function (person) {
+//   person.passport = Math.trunc(Math.random() * 10000000000);
+// };
 
-newPassPort(victor);
-checkIn(flight, victor);
+// newPassPort(victor);
+// checkIn(flight, victor);
+
+//////////////////////////////////////
+
+//First-class vs higher-order functions
